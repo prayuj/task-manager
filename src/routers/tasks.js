@@ -2,7 +2,6 @@ const express = require('express')
 const router = new express.Router()
 const Task = require('../model/task.model')
 const auth = require('../middleware/auth')
-const { translateAliases } = require('../model/task.model')
 
 router.post('/tasks', auth, async (req, res) => {
     const task = new Task({
