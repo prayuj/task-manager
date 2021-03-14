@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/indec.js",
+    "start": "node src/index.js",
     "dev": "env-cmd -f ./src/config/dev.env nodemon src/index.js"
   },
   "keywords": [],
