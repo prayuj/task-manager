@@ -43,7 +43,11 @@ router.get('/tasks', auth, async (req, res) => {
                 sort
             }
         }).execPopulate()
-        res.send(req.user.tasks)
+        const total = await Task.countDocuments({ owner: req.user._id })
+        res.send({
+            tasks: req.user.tasks,
+            total
+        })
     } catch (error) {
         res.status(500).send(error)
     }
